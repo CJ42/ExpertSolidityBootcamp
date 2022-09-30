@@ -12,8 +12,7 @@ contract GasContract is Ownable {
     event PaymentUpdated(
         address admin,
         uint256 ID,
-        uint256 amount,
-        string recipient
+        uint256 amount
     );
 
     event WhiteListTransfer(address indexed);
@@ -32,7 +31,6 @@ contract GasContract is Ownable {
     struct History {
         uint256 lastUpdate;
         address updatedBy;
-        uint256 blockNumber;
     }
 
     struct Payment {
@@ -58,7 +56,6 @@ contract GasContract is Ownable {
 
     uint256 constant TRADE_FLAG = 1;
     uint256 constant DIVIDEND_FLAG = 1;    
-    PaymentType constant defaultPayment = PaymentType.Unknown;
 
     uint256 immutable public totalSupply; // cannot be updated
     
@@ -122,7 +119,6 @@ contract GasContract is Ownable {
     {
         paymentHistory.push(
             History({
-                blockNumber: block.number,
                 lastUpdate: block.timestamp,
                 updatedBy: _updateAddress
             })
@@ -200,8 +196,7 @@ contract GasContract is Ownable {
                 emit PaymentUpdated(
                     msg.sender,
                     _ID,
-                    _amount,
-                    payment.recipientName
+                    _amount
                 );
                 return;
             }
