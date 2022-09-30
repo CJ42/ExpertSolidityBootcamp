@@ -22,4 +22,4 @@ In order to generate storage diagram run the following command:
 
 ## Final after Optimization
 
-<img width="829" alt="image" src="https://user-images.githubusercontent.com/31145285/193272528-a7dfbcbb-20d3-4bc4-88b9-c400dfefc290.png">
+<img width="803" alt="image" src="https://user-images.githubusercontent.com/31145285/193319964-ea422af0-1003-4062-b6f7-7f6c6c53cc0e.png">
